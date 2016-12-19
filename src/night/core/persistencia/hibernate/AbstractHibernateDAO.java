@@ -116,8 +116,8 @@ public abstract class AbstractHibernateDAO<T, ID extends Serializable> implement
 		try {
 			T newEntityRef = (T) getSession().merge(entity);
 			getSession().saveOrUpdate(newEntityRef);
+			getSession().flush();
 			getSession().getTransaction().commit();
-			// getSession().flush();
 			getSession().close();
 			System.out.println("passou");
 
@@ -192,6 +192,7 @@ public abstract class AbstractHibernateDAO<T, ID extends Serializable> implement
 		try {
 
 			crit = getSession().createCriteria(getPersistentClass());
+			crit.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 			for (Criterion c : criterion) {
 				crit.add(c);
 			}

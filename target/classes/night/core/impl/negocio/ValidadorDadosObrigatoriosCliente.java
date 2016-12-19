@@ -22,14 +22,14 @@ public class ValidadorDadosObrigatoriosCliente implements IStrategy {
 			String estado = cliente.getEndereco().getEstado();
 			String rua = cliente.getEndereco().getRua();
 
-			if (nome == null || cidade == null || rua == null || estado == null || (rg == 0 && cpf == 0)
+			if (nome == null || cidade == null || rua == null || estado == null || (rg == 0 || cpf == 0)
 					|| dtNascimento == null) {
-				return "Nome, 	endereço e rg ou cpf são de preenchimento obrigatório!";
+				return "Nome, endereço e rg ou cpf são de preenchimento obrigatório!\n";
 			}
 
 			if (nome.trim().equals("") || cidade.trim().equals("") || rua.trim().equals("")
 					|| estado.trim().equals("")) {
-				return "Nome, e endereço são de preenchimento obrigatórios!\n";
+				return "Nome e endereço são de preenchimento obrigatórios!\n";
 			}
 
 		} else {

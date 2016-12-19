@@ -13,6 +13,15 @@
 	 	<property name="hibernate.connection.autocommit">true</property> 
 	 	<property name="hibernate.flushMode">org.hibernate.FlushMode.ALWAYS</property>
 	 	
+	 	<property name="javax.persistence.sharedCache.mode">ENABLE_SELECTIVE</property>
+	 	
+
+		<property name="hibernate.c3p0.min_size">5</property>	
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">300</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+	 	
 	    <!--  thread is the short name for org.hibernate.context.ThreadLocalSessionContext
 	      and let Hibernate bind the session automatically to the thread --> 
 	    <property name="current_session_context_class">thread</property>

@@ -29,7 +29,7 @@ public class MedidaUtils {
 	public MedidaUtils() {
 		super();
 
-		setMapa(new HashMap<>());
+		setMapa(new HashMap<String, IConversionStrategy>());
 
 		String stringGrparaKg = Medida.UNIDADE_GRAMA + "-" + Medida.UNIDADE_KILO;
 		String stringGrParaMg = Medida.UNIDADE_GRAMA + "-" + Medida.UNIDADE_MILIGRAMA;
